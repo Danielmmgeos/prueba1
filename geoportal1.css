@@ -12,7 +12,16 @@ header {
 
 nav{
     background-color: #59a12fe8;
-    display: flex;
     padding: 0;
     Margin: 0;
+}
+
+nav ul{
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
 }
