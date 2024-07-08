@@ -1,0 +1,10 @@
+
+Estructura del curso
+
+Crear un documento html
+  idiona del documento
+Explicar los elementos contenidos en Head
+  charset
+  meta
+  title
+  icono
