@@ -13,7 +13,6 @@ header {
 
 nav{
     background-color: #59a12fe8;
-<<<<<<< Updated upstream
     padding: 0;
     Margin: 0;
 }
@@ -26,11 +25,9 @@ nav ul{
 
 nav ul li {
     margin: 0 15px;
-=======
 }
 footer{
     background-color: ghostwhite;
     text-align: center;
     font-size: 10px;
->>>>>>> Stashed changes
 }
