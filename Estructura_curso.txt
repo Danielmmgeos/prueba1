@@ -20,11 +20,8 @@ Explicar los elementos contenidos en Head
     <link rel="icon" type="image/png" href="CIPAES_sin-fondo.png">
     <title>Maqueta curso Geoportal</title>
 
-<<<<<<< HEAD
 Explicar los elementos de la Maqueta
-=======
-Insertar barra de navegación
->>>>>>> 6836fe357d37a9bc336365035fde8d39a1da5a59
+
 
 HEADER
 BARRA navegación

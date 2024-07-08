@@ -11,6 +11,10 @@ header {
     margin: 0;
 }
 
+header .img_cipaes{
+    width: 100px;
+}
+
 nav {
     background-color: #59a12fe8;
     margin: 0; 
@@ -72,7 +76,4 @@ footer{
     text-align: center;
     font-size: 10px;
 }
-header .img_cipaes{
-    width: 100px;
-    margin-right: auto;
-}
+
