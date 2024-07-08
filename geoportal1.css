@@ -13,24 +13,23 @@ header {
 
 nav{
     background-color: #59a12fe8;
-<<<<<<< Updated upstream
-    padding: 0;
-    Margin: 0;
 }
 
-nav ul{
-    display: flex;
-    list-style-type: none;
-    justify-content: center;
+
+.mapa {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    padding: 10px 0px;
+    color:  rgba(24, 23, 23, 0.918);
+    height: 32vw;
 }
 
-nav ul li {
-    margin: 0 15px;
-=======
+.mapa .div{
+    padding: 10px;
 }
+
 footer{
     background-color: ghostwhite;
     text-align: center;
     font-size: 10px;
->>>>>>> Stashed changes
 }
