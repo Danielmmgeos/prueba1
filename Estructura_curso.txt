@@ -19,9 +19,7 @@ Explicar los elementos contenidos en Head
     <link rel="icon" type="image/png" href="CIPAES_sin-fondo.png">
     <title>Maqueta curso Geoportal</title>
 
-<<<<<<< Updated upstream
 Insertar barra de navegación
-=======
 
 
 
@@ -31,4 +29,3 @@ Insertar barra de navegación
 
   <footer>Copyright &copy; CIPAES 2024 <br>Todos los derechos reservados
 </footer> Pie de página del sitio web
->>>>>>> Stashed changes
