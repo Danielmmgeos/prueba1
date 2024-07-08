@@ -12,7 +12,10 @@ header {
 
 nav{
     background-color: #59a12fe8;
-    display: flex;
     padding: 0;
     Margin: 0;
+}
+
+nav ul{
+    display: flex;
 }
