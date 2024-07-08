@@ -29,6 +29,10 @@ nav ul li {
     margin: 0 15px;
 }
 
+nav ul li a:hover {
+    text-decoration:#fdff73e8; 
+}
+
 footer {
     background-color: ghostwhite;
     text-align: center;
