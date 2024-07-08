@@ -2,9 +2,12 @@
 Estructura del curso
 
 Crear un documento html
-  idiona del documento
+  idioma del documento
 Explicar los elementos contenidos en Head
-  charset
-  meta
-  title
-  icono
+   <meta charset="UTF-8"> Codificación
+    <meta name="description" content="Introducción a html"/> Descripción
+    <meta name="keywords" content="html, geoportal, curso"/> Palabras clave
+    <meta name="author" content="Elaborado por: CIPAES Mx" /> Elaborado por
+    <meta name="copyright" content="CIPAES 2024" /> Copyright
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> Cómo se va a visualizar
+    <title>Geoportal 1</title> Titulo en la pestaña
