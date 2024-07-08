@@ -1,4 +1,7 @@
-
+Instalar plugins
+Liver Server: para ver cambios en tiempo real en navegador 
+indent-rainbow: visualizar identación más facilmente
+Image preview: visualizar imágenes en html
 Estructura del curso
 
 Crear un documento html
