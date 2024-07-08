@@ -29,8 +29,8 @@ nav ul li {
     margin: 0 15px;
 }
 
-nav ul li a:hover {
-    text-decoration:solid; 
+nav ul a:hover {
+    text-decoration:#fdfa49e8; 
 }
 
 footer {
