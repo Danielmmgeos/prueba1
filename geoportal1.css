@@ -41,6 +41,32 @@ nav ul li a:hover {
     color: #fdfa49e8; 
 }
 
+
+.General {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    padding: 0px 0px;
+    color:  rgba(24, 23, 23, 0.918);
+    height: 32vw;
+}
+
+.General .div{
+    padding: 50px;
+}
+
+#Gestorcapas {
+    background-color: rgb(228, 228, 228);
+}
+
+#Gestor1 {
+    padding: 20px;
+}
+
+#Mapa {
+    background-color: rgb(214, 227, 255);
+}
+
+
 footer{
     background-color: ghostwhite;
     text-align: center;
