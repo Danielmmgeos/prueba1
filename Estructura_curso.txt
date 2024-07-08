@@ -6,11 +6,8 @@ Crear un documento html
 Explicar los elementos contenidos en Head
    <meta charset="UTF-8"> Codificación
     <meta name="description" content="Introducción a html"/> Descripción
-    <meta name="keywords" content="html, geoportal, curso"/>
-    <meta name="author" content="Elaborado por: CIPAES Mx" />
-    <meta name="copyright" content="CIPAES 2024" />
-    <meta name="robots" content="index,follow" />
-    <meta http-equiv="cache-control" content="no-cache"/>
-    <meta http-equiv="expires" content="0"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geoportal 1</title>
+    <meta name="keywords" content="html, geoportal, curso"/> Palabras clave
+    <meta name="author" content="Elaborado por: CIPAES Mx" /> Elaborado por
+    <meta name="copyright" content="CIPAES 2024" /> Copyright
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> Cómo se va a visualizar
+    <title>Geoportal 1</title> Titulo en la pestaña
