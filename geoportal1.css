@@ -70,3 +70,7 @@ footer{
     text-align: center;
     font-size: 10px;
 }
+header .img_cipaes{
+    width: 100px;
+    margin-right: auto;
+}
