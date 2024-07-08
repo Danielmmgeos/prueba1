@@ -21,3 +21,7 @@ nav ul{
     list-style-type: none;
     justify-content: center;
 }
+
+nav ul li {
+    margin: 0 15px;
+}
