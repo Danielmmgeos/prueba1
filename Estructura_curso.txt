@@ -3,7 +3,7 @@ Liver Server: para ver cambios en tiempo real en navegador
 indent-rainbow: visualizar identación más facilmente
 Image preview: visualizar imágenes en html
 Configuración VSC
-View-Word Wrap
+View-Word Wrap o Alt+z
 Estructura del curso
 
 Crear un documento html
