@@ -4,15 +4,22 @@ body {
 }
 
 header {
-    background-color: #ff9c40e8; 
-    color: white; 
-    padding: 20px; 
-    text-align: center; 
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    background-color: #ff9c40e8;
+    color: white;
+    padding: 20px;
+    text-align: center;
     margin: 0;
 }
 
-header .img_cipaes{
-    width: 100px;
+header .img_cipaes {
+    width: 80px;
+}
+
+header .titulo {
+    flex: 1; 
 }
 
 nav {
