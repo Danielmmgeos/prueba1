@@ -1,11 +1,20 @@
 ESTRUCTURA DEL CURSO
 
 Instalar plugins
+Spanish Language Pack: Cambia el idioma de VSC a español (Ctrl+Shift+P -> Display Language -> Español)
 Liver Server: para ver cambios en tiempo real en navegador 
 indent-rainbow: visualizar identación más facilmente
 Image preview: visualizar imágenes en html
+Error Lens: detecta errores en código
+Prettier: Da acomodo al código en Javascript
+Python: Entrega sugerencias al escribir código en Python
+
 Configuración VSC
 View-Word Wrap o Alt+z
+Settings -> Linked Editing. Auto edición de etiquetas
+
+Settings -> Bracket pair colorization. Da color distinto a cada llave
+Settings -> Bracket pairs. Coloriza toda la sección contenida en una llave.
 
 CREACIÓN DE HTML 
 
