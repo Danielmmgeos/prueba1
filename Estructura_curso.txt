@@ -1,10 +1,13 @@
+ESTRUCTURA DEL CURSO
+
 Instalar plugins
 Liver Server: para ver cambios en tiempo real en navegador 
 indent-rainbow: visualizar identación más facilmente
 Image preview: visualizar imágenes en html
 Configuración VSC
 View-Word Wrap o Alt+z
-Estructura del curso
+
+CREACIÓN DE HTML 
 
 Crear un documento html
   idioma del documento
@@ -22,16 +25,19 @@ Explicar los elementos contenidos en Head
 
 Explicar los elementos de la Maqueta
 
-
+BODY
 HEADER
 BARRA navegación
-BODY
+  Cuerpo de mapa
+    <div>
+    clases
+    id
+    display:grid
+    grid-template-columns: %
+    padding
+    heigth
+    background-color
+
 FOOTER
 
 
-
-
-
-
-  <footer>Copyright &copy; CIPAES 2024 <br>Todos los derechos reservados
-</footer> Pie de página del sitio web
