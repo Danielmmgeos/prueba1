@@ -6,7 +6,6 @@ body {
 header {
     display: flex;
     align-items: center;
-    justify-content: center; 
     background-color: #ff9c40e8;
     color: white;
     padding: 20px;
@@ -16,6 +15,7 @@ header {
 
 header .img_cipaes {
     width: 80px;
+    padding-left: 20px;
 }
 
 header .titulo {
@@ -80,5 +80,6 @@ footer{
     background-color: ghostwhite;
     text-align: center;
     font-size: 10px;
+    margin-top: auto;
 }
 
