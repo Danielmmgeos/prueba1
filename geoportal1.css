@@ -99,23 +99,23 @@ footer{
 }
 
 .modal {
-    display: none; /* Oculto por defecto */
-    position: fixed; /* Fijo en la pantalla */
-    z-index: 1000; /* Por encima de otros elementos */
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
     left: 0;
     top: 0;
-    width: 100%; /* Ancho completo */
-    height: 100%; /* Alto completo */
-    overflow: auto; /* Desplazamiento si es necesario */
-    background-color: rgba(0, 0, 0, 0.4); /* Con opacidad */
+    width: 50%; 
+    height: 50%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.4); 
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% desde la parte superior y centrado */
+    margin: 15% auto; 
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Ancho del modal */
+    width: 80%; 
 }
 
 .close {
