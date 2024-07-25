@@ -56,14 +56,23 @@ nav ul li {
 
 nav ul li a {
     color: white; 
-    text-decoration: none; 
+    align-items: center;
     font-size: 18px; 
-    display: block; 
+    display: flex; 
     padding: 10px; 
 }
 
+nav ul li a img {
+    margin-right: 5px; 
+    vertical-align: middle; 
+}
+
 nav ul li a:hover {
-    color: #fdfa49e8; 
+    color: #fdfa49e8 !important; /* Color del texto al pasar el cursor */
+}
+
+nav ul li a:hover img {
+    filter: invert(80%) sepia(50%) saturate(300%) hue-rotate(10deg) brightness(110%) contrast(100%); /* Cambiar color del icono */
 }
 
 .General {
