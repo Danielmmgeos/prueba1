@@ -8,17 +8,21 @@
     <meta name="copyright" content="CIPAES 2024" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="geoportal1.css">
-    <link rel="icon" type="image/png" href="CIPAES_sin-fondo.png">
+    <link rel="icon" type="image/png" href="CIPAES_logo.png">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <title>Maqueta curso Geoportal</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script src="geoportal1.js"></script>
+    <script src="modal.js"></script> 
 </head>
 
 <body>
+
     <header>
         <a href="https://www.facebook.com/CipaesMex" target="_blank">
         <img src="CIPAES_sin-fondo.png" class="img_cipaes" alt="imagen encabezado"></a>
@@ -36,28 +40,50 @@
 
 
     <div class="General">
+
         <div id="Gestorcapas">
-            <div id="Gestor1">
-                Gestor de capas
+            <!-- COMIENZA TABLA -->
+            <ul class="nav nav-tabs" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Gestor de capas</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Leyenda</button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                        <dd><input type="checkbox">  Áreas Naturales Protegidas</dd>
+                        <dd><input type="checkbox">  Ríos</dd>
+                        <dd><input type="checkbox">  Localidades</dd>          
+                </div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                    Leyenda
+                </div>
             </div>
+            <!-- TERMINA TABLA -->
         </div>
+
         <div id="Mapa">
         </div>
     </div>
+
     <footer>
-        Copyright &copy; CIPAES 2024 <br>Todos los derechos reservados
-    </footer>
-    <script src="geoportal1.js"></script>
-
-    <div id="modalAcercaDe" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Acerca de</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, quasi quas pariatur qui odio aperiam nemo quidem praesentium ea ex tempora reprehenderit possimus, minima porro ipsam eum tenetur necessitatibus sequi?</p>
+        <div class="contenedor">
+            <div>
+                Copyright &copy; CIPAES 2024 <br>Todos los derechos reservados
+            </div>
+            <div>
+                Apartado 2
+            </div>
+            <div>
+                Apartado 3
+            </div>
         </div>
-    </div>
+    </footer>
 
-    <script src="modal.js"></script> 
 </body>
+
 
 </html>
