@@ -97,7 +97,7 @@ nav ul li a:hover img {
 }
 
 .modal {
-    display: none; 
+    display: none; /* Oculto por defecto */
     position: fixed; 
     z-index: 1000; 
     left: 50%;
@@ -131,7 +131,6 @@ nav ul li a:hover img {
     text-decoration: none;
     cursor: pointer;
 }
-
 footer{
     background-color: rgb(230, 159, 67);
     text-align: center;
