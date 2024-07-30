@@ -11,12 +11,11 @@
     <link rel="icon" type="image/png" href="CIPAES_logo.png">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <title>Maqueta curso Geoportal</title>
-
+    <title>Maqueta curso Geoportal</title>  
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
 </head>
 
@@ -55,7 +54,29 @@
                 <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
                         <dd><input type="checkbox">  Áreas Naturales Protegidas</dd>
                         <dd><input type="checkbox">  Ríos</dd>
-                        <dd><input type="checkbox">  Localidades</dd>          
+                        <dd><input type="checkbox">  Localidades</dd><br>   
+                        <h6>Consulta por tipo de ANP</h6>
+                        <form action="#" method="post" id="envio_post">
+                            <select name="tipo_anp" id="tipo" class="form-select"> 
+                                <option value="nodata" disabled selected>Seleccione el tipo de ANP</option>
+                                <option value="TOT">Todas</option>
+                                <option value="RB">Reservas de la biósfera</option>
+                                <option value="APFF">Áreas de protección de flora y fauna</option>
+                                <option value="APRN">Áreas de protección de recursos naturales</option>
+                                <option value="PN">Parques nacionales</option>
+                                <option value="MN">Monumentos naturales</option>
+                                <option value="SANT">Santuarios</option>
+                            </select>
+                            
+                            <input class="boton" type="submit" value="Enviar" />
+                        </form> <br>
+                        <h6>Consulta de ANP por entidad federativa o región</h6>
+                        <form action="#" method="get" id="envio_get">
+                            <input type="text" id="region" required />
+                            <input class="boton_reg" type="submit" value="Enviar" />
+                        </form> <br>
+                        <h6>Resultados</h6>
+                        <div id="contenido"></div>       
                 </div>
                 <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
                     Leyenda
