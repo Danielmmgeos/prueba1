@@ -91,6 +91,10 @@ nav ul li a:hover img {
     margin: 15px;
 }
 
+select{
+    width: 50%;
+}
+
 #Mapa {
     height: 100%; 
     width: 100%;
@@ -142,4 +146,31 @@ footer .contenedor  {
     display: grid;
     grid-template-columns: 30% 30% 30%;
     padding: 10px 20px;
+}
+
+select.form-select {
+    width: 200px; 
+    height: 30px;
+    font-size: 11px; 
+}
+
+.boton{
+    margin: 10px;
+    margin-left: 25%;
+}
+
+.boton_reg{
+    margin-left: 5%;
+}
+
+h6{
+    letter-spacing: 1px;
+    text-align: justify;
+}
+
+#contenido {
+    max-height: 200px; 
+    overflow-y: auto; 
+    border: 1px solid #ccc; 
+    padding: 10px; 
 }
