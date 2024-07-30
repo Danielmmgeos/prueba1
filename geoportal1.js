@@ -1,5 +1,3 @@
-
-
 document.addEventListener('DOMContentLoaded', function() {
     var map = L.map('Mapa').setView([23.6345, -102.5528], 5);
 
@@ -33,4 +31,181 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     L.control.layers(capasBase).addTo(map);
-});
+
+    function popUpInfo(features, layer) {
+        if (features.properties && features.properties.nombre) {
+            layer.bindPopup("<b>Nombre: " + features.properties.nombre + "</b><br/>Categoría de manejo: " + features.properties.cat_manejo + "<br/>Estados: " + features.properties.estados + "<br/>Región: " + features.properties.region);
+        // Evento mouseover para cambiar estilo al pasar el cursor
+/*         layer.on('mouseover', function(e) {
+            layer.setStyle({
+                weight: 5,
+                color: '#666',
+                dashArray: '',
+                fillOpacity: 0.7
+            });
+        });
+        
+        // Evento mouseout para restaurar el estilo original al salir del cursor
+        layer.on('mouseout', function(e) {
+            miconsulta.resetStyle(e.target);
+        }); */
+
+                // Añadir evento click para cambiar el estilo
+                let selected = false;  // Variable para almacenar el estado de selección
+        
+                layer.on('click', function(e) {
+                    selected = !selected;  // Alternar el estado de selección
+        
+                    if (selected) {
+                        // Estilo cuando se selecciona la capa
+                        layer.setStyle({
+                            weight: 1,
+                            color: '#ccb700',
+                            dashArray: '',
+                            fillOpacity: 0.7
+                        });
+                    } else {
+                        // Restablecer el estilo original cuando se deselecciona
+                        miconsulta.resetStyle(e.target);
+                    }
+                });
+    }
+}    
+
+    var miconsulta = L.geoJson(null, {
+        style: function (feature) {
+            var optColorear = '';
+            var columna = '';
+            if (typeof(feature.properties.cat_manejo) !== 'undefined') {
+                optColorear = feature.properties.cat_manejo;
+                columna = 'cat_manejo';
+            }
+            return {
+                stroke: true,
+                color: getColour(optColorear, columna),
+                opacity: 0.7,
+                weight: 1
+            };
+        },
+        onEachFeature: popUpInfo
+    });
+
+    function getColour(feature, campo) {
+        switch (feature) {
+            case 'RB':
+                return "#027820";
+            case 'APFF':
+                return "#99ff33";
+            case 'APRN':
+                return "#ff9933";
+            case 'PN':
+                return "#6666FF";
+            case 'MN':
+                return "#33FFFF";
+            case 'SANT':
+                return "#CC33FF";
+            default:
+                return "#808080"; 
+        }
+    }
+
+    $(document).ready(function() {
+        $('#envio_post').on('submit', function(event) {
+            event.preventDefault();
+            var anpselected = $('#tipo').val();
+    
+            // Verificar el valor en la consola
+            console.log('Valor seleccionado:', anpselected);
+    
+            // Verificar si la opción seleccionada es la predeterminada
+            if (anpselected === null) {
+                $('#contenido').html('No has seleccionado un tipo de ANP.');
+                return false;
+            }
+    
+            var URL = 'geoportal.php';
+            var contenido_html = '';
+    
+            $.ajax({
+                url: URL,
+                type: 'POST',
+                data: {
+                    tipo: anpselected
+                },
+                success: function(respuesta) {
+                    if (respuesta.features.length > 0) {
+                        miconsulta.clearLayers();
+                        miconsulta.addData(respuesta);
+                        map.addLayer(miconsulta);
+                        contenido_html = '';
+                        for (var i = 0; i < respuesta.features.length; i++) {
+                            contenido_html += "<b>Nombre de ANP:</b> " + respuesta.features[i].properties.nombre + "<br/>";
+                            contenido_html += "<b>Tipo de ANP:</b> " + respuesta.features[i].properties.cat_manejo + "<br/>";
+                            contenido_html += "<b>Superficie total (km<sup>2</sup>):</b> " + respuesta.features[i].properties.superficie + "<br/>";
+                            contenido_html += "<b>Superficie terrestre (km<sup>2</sup>):</b> " + respuesta.features[i].properties.s_terres + "<br/>";
+                            contenido_html += "<b>Superficie marina (km<sup>2</sup>):</b> " + respuesta.features[i].properties.s_marina + "<br/>";
+                            contenido_html += "<b>Estados:</b> " + respuesta.features[i].properties.estados + "<br/>";
+                            contenido_html += "<b>Región:</b> " + respuesta.features[i].properties.region + "<br/>";
+                            contenido_html += "<b>Fecha de decreto:</b> " + respuesta.features[i].properties.prim_dec + "<br/>";
+                            contenido_html += "<hr/>";
+                        }
+                    } else {
+                        contenido_html = "La consulta no tiene resultados";
+                    }
+                    $('#contenido').html(contenido_html);
+                },
+                error: function(jqXHR, estado, error) {
+                    $('#contenido').html('Se produjo un error: ' + estado + ' error: ' + error);
+                }
+            });
+    
+            return false;  // Previene el re-envío
+        });
+    });
+    
+    
+    
+    $('#envio_get').on('submit', function(event) {
+        event.preventDefault();
+        var region = $('#region').val();
+        var URL = 'geoportal.php';
+        var contenido_html = '';
+    
+        $.ajax({
+            url: URL,
+            type: 'GET',
+            dataType: 'json',
+            data: {
+                region: region
+            },
+            success: function(data) {
+                if (data && data.features && data.features.length > 0) {
+                    var respuesta = data;
+                    miconsulta.clearLayers();
+                    miconsulta.addData(respuesta);
+                    map.addLayer(miconsulta);
+                    contenido_html = '';
+                    for (var i = 0; i < respuesta.features.length; i++) {
+                        contenido_html += "<b>Nombre de ANP:</b> " + respuesta.features[i].properties.nombre + "<br/>";
+                        contenido_html += "<b>Tipo de ANP:</b> " + respuesta.features[i].properties.cat_manejo + "<br/>";
+                        contenido_html += "<b>Superficie total (km<sup>2</sup>):</b> " + respuesta.features[i].properties.superficie + "<br/>";
+                        contenido_html += "<b>Superficie terrestre (km<sup>2</sup>):</b> " + respuesta.features[i].properties.s_terres + "<br/>";
+                        contenido_html += "<b>Superficie marina (km<sup>2</sup>):</b> " + respuesta.features[i].properties.s_marina + "<br/>";
+                        contenido_html += "<b>Estados:</b> " + respuesta.features[i].properties.estados + "<br/>";
+                        contenido_html += "<b>Región:</b> " + respuesta.features[i].properties.region + "<br/>";
+                        contenido_html += "<b>Fecha de decreto:</b> " + respuesta.features[i].properties.prim_dec + "<br/>";
+                        contenido_html += "<hr/>";
+                    }
+                } else {
+                    miconsulta.clearLayers();
+                    contenido_html = 'No existen áreas naturales protegidas bajo esta región';
+                }
+                $('#contenido').html(contenido_html);
+            },
+            error: function(xhr, status, error) {
+                console.error("Error en la consulta AJAX: ", status, error);
+                $('#contenido').html('Ocurrió un error al realizar la consulta.');
+            }
+        });
+    });
+    });    
