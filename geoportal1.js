@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var map = L.map('Mapa').setView([23.6345, -102.5528], 5);
+    var map = L.map('map', { editable: true }).setView([23.6345, -102.5528], 5);
 
     var osmLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -31,6 +31,17 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     L.control.layers(capasBase).addTo(map);
+
+
+    map.addControl(new L.Control.LinearMeasurement({
+        unitSystem: 'metric',
+        color: '#ff9900',
+        type: 'line'
+    }));
+
+    const measurePolygonControl = L.control.measurePolygon();
+    measurePolygonControl.addTo(map);
+    
 
     function popUpInfo(features, layer) {
         if (features.properties && features.properties.nombre) {
@@ -209,3 +220,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     });    
+
