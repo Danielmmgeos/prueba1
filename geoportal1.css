@@ -100,7 +100,7 @@ select{
     width: 100%;
 }
 
-.modal {
+.modal1 {
     display: none; /* Oculto por defecto */
     position: fixed; 
     z-index: 1000; 
@@ -108,33 +108,36 @@ select{
     top: 50%;
     transform: translate(-50%, -50%);
     width: 50%; 
-    height: 50%; 
+    height: auto; 
+    max-height: 80%; /* Limita la altura del modal */
     overflow: auto; 
-    background-color: rgba(0, 0, 0, 0.4); 
+    background-color: #fff; /* Fondo blanco del modal */
+    padding: 20px; /* Añade un padding al modal */
+    box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el tamaño total del elemento */
+    border: 1px solid #da8404; /* Borde del modal */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra del modal */
 }
-
-.modal-content {
+.modal-conten {
     background-color: #fefefe;
     padding: 20px;
-    border: 1px solid #da8404;
+    border: none;
     width: 100%; 
     height: 100%; 
-    box-sizing: border-box; 
+    text-align: center;
 }
-
 .close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
-
 .close:hover,
 .close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
 }
+
 footer{
     background-color: rgb(230, 159, 67);
     text-align: center;
