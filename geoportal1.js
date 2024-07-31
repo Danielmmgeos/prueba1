@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var map = L.map('map', { editable: true }).setView([23.6345, -102.5528], 5);
+    var map = L.map('map').setView([23.6345, -102.5528], 5);
 
     var osmLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -31,17 +31,37 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     L.control.layers(capasBase).addTo(map);
-
-
+    
     map.addControl(new L.Control.LinearMeasurement({
         unitSystem: 'metric',
         color: '#ff9900',
         type: 'line'
     }));
-
-    const measurePolygonControl = L.control.measurePolygon();
-    measurePolygonControl.addTo(map);
     
+    var drawnItems = new L.FeatureGroup();
+        map.addLayer(drawnItems);
+
+        var drawControl = new L.Control.Draw({
+            edit: {
+                featureGroup: drawnItems
+            },
+            draw: {
+                polygon: true,
+                polyline: true,
+                rectangle: true,
+                circle: false,
+                marker: true
+            }
+        });
+        map.addControl(drawControl);
+
+        map.on(L.Draw.Event.CREATED, function (event) {
+            var layer = event.layer;
+
+            drawnItems.addLayer(layer);
+        });
+
+
 
     function popUpInfo(features, layer) {
         if (features.properties && features.properties.nombre) {
