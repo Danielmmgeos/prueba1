@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
         color: '#ff9900',
         type: 'line'
     }));
-    
+
     var drawnItems = new L.FeatureGroup();
         map.addLayer(drawnItems);
 
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 polygon: true,
                 polyline: true,
                 rectangle: true,
-                circle: false,
+                circle: true,
                 marker: true
             }
         });
