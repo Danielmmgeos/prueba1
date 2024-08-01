@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     L.control.layers(capasBase).addTo(map);
     
+    // CONTROLES DE DIBUJO
     map.addControl(new L.Control.LinearMeasurement({
         unitSystem: 'metric',
         color: '#ff9900',
@@ -267,3 +268,4 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
