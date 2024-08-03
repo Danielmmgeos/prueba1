@@ -6,7 +6,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 // Conexión al servidor de PostgreSQL
-$connection = pg_connect("host=localhost dbname=anp port=5432 user=postgres password=postgres");
+$connection = pg_connect("host=3.135.88.57 dbname=geoserver_db port=5432 user=postgres password=postgrescipaes");
 if (!$connection) {
     die("No se ha podido establecer conexión con la base de datos.");
 }
