@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return false;
             }
     
-            var URL = 'geoportal.php';
+            var URL = 'http://3.135.88.57/geoportal.php';
             var contenido_html = '';
     
             $.ajax({
@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', function() {
     $('#envio_get').on('submit', function(event) {
         event.preventDefault();
         var region = $('#region').val();
-        var URL = 'geoportal.php';
+        var URL = 'http://3.135.88.57/geoportal.php';
         var contenido_html = '';
     
         $.ajax({
