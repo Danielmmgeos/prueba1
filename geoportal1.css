@@ -11,7 +11,7 @@ header {
     background-color: rgb(216, 239, 250);
     color: rgb(104, 91, 91);
     font-family: "Dosis", sans-serif;
-    font-weight: 700;
+    font-weight: 750;
     padding: 10px;
     text-align: center;
     margin: 0;
@@ -30,7 +30,7 @@ header .mundo{
 
 
 nav {
-    background-color: #59a12fe8;
+    background-color: #8dc170;
     margin: 0; 
     padding: 10px 0;
     font-family: "Dosis", sans-serif;
@@ -47,10 +47,14 @@ nav ul li {
     margin: 0 15px;
 }
 nav ul li a {
-    color: rgba(255, 255, 255, 0.9); 
     align-items: center;
     display: flex; 
     padding-left: 15px;
+}
+nav a{
+    font-weight: 750;
+    color: white; 
+    text-decoration: none;
 }
 nav ul li a img {
     vertical-align: middle; 
@@ -59,10 +63,10 @@ nav ul li a img {
     margin-right: 10px;
 }
 nav ul li a:hover {
-    color: #000000e8 !important; 
+    color: #2d2d2de8 !important; 
 }
 nav ul li a:hover img {
-    filter: invert(80%) sepia(50%) saturate(300%) hue-rotate(10deg) brightness(110%) contrast(100%); /* Cambiar color del icono */
+    filter: invert(72%)  saturate(300%) hue-rotate(10deg) brightness(110%) contrast(100%); /* Cambiar color del icono */
 }
 
 .General {
@@ -73,8 +77,6 @@ nav ul li a:hover img {
 }
 
 #Gestorcapas {
-    display: block;
-    flex-direction: column;
     background-color: rgb(228, 228, 228);
     font-size: 10px;
 }
@@ -82,13 +84,55 @@ nav ul li a:hover img {
     padding: 5px 10px;
     color: rgb(0, 0, 0);
 }
-#Gestorcapas .nav-tabs link.active{
-    background-color: rgb(242, 11, 11);
+#pills-profile2 h6{
+    font-size: 1em;
+    text-align: left;
+}
+#Gestorcapas div{
+    margin-bottom: 25px;
 }
 
+
 #capas {
-    padding: 0px;
+    display: flex;
+    flex-direction: column;
 }
+
+#Leyenda{
+    background-color: #fff;
+    border-radius: 5%;
+    width: 100%;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 30px;
+    max-height: 400px;
+}
+
+
+
+
+
+#ResConsult::-webkit-scrollbar{
+  width: 12px;
+  background-color: #f1eaea9f;
+}
+#ResConsult::-webkit-scrollbar-thumb {
+  width: 7px;
+  background: #c09438;
+  border-radius: 15px;
+  border-left: 3px solid #f1eaea9f;
+  border-right: 3px solid #f1eaea9f;
+  border-top: 5px solid #f1eaea9f;
+  border-bottom: 5px solid #f1eaea9f;
+}
+#ResConsult::-webkit-scrollbar-button {
+  background-color: #f1eaea9f;
+  height: 6px;
+}
+
+
+
 
 
 #pills-tabContent {
@@ -107,7 +151,7 @@ select{
     display: none; /* Oculto por defecto */
     position: fixed; 
     z-index: 1000; 
-    left: 50%;
+    left: 60%;
     top: 50%;
     transform: translate(-50%, -50%);
     width: 50%; 

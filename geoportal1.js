@@ -269,3 +269,48 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+// Funcionamiento de Checkbox
+ 
+    //Agregar capa de Geoserver
+    var ANP_capa = new ol.layer.Tile({
+        source: new ol.source.TileWMS({
+            url: 'http://132.247.70.74:8080/geoserver/Geoportal_PUIC/wms',
+            params: {'LAYERS': 'Geoportal_PUIC:CH_10_PB_PTL', 'TILED': true},
+            transparent: false,
+            serverType: 'geoserver',
+            }),
+        visible: false,
+        title: 'ANP_',
+        zIndex: 2,
+    })
+    //Grupo de Capas Geoserver
+    const GrupoCapasGeoserver = new ol.layer.Group({
+        layers:[
+            ANP_capa
+        ]
+    })
+    //Agregar al mapa capas de Geoserver
+    map1.addLayer(GrupoCapasGeoserver);
+
+
+
+    // Escuchador de eventos para los checkbox de Geoserver
+
+    //Eventos Chiapas
+    var ANP_Checkbox = document.getElementById('ANP-checkbox');
+    ANP_Checkbox.addEventListener('change', function() {
+    ANP_capa.setVisible(this.checked);
+    })
+
+
+    //Activar Leyenda en contenedor mediante checkbox
+
+    //Funciones Chiapas
+    function Fun_ANP() {
+        var x = document.getElementById("ANP_capa");
+        if (x.style.display === "none") {
+        x.style.display = "block";
+        } else {
+        x.style.display = "none";
+        }
+    }
