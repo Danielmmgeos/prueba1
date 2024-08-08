@@ -80,24 +80,29 @@
                             Áreas Naturales Protegidas</div1>
                         <div1><input type="checkbox" id="Rios-checkbox" name='Rios_' onclick="Fun_RIOS()" style="margin: 10px;">
                             Ríos</div1>
-                        <div1><input type="checkbox" id="CH_10_PB_PTM-checkbox" name='CH_10_PB_PTM' style="margin: 10px"
-                            onclick="Fun_CH_10_PB_PTM()">Localidades</div1>
+                        <div1><input type="checkbox" id="LocUrb-checkbox" name='CH_10_PB_PTM' style="margin: 10px"
+                            onclick="Fun_LocUrb()">Localidades</div1>
                     </div>
                 </div>
 
                 <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
                     <div id="Leyenda">
-                        <h6>Leyenda</h6>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde mollitia, dolores odio amet nihil nisi voluptate necessitatibus! Fugit voluptates enim quae tempore voluptas eos eligendi nesciunt. Natus optio quam quisquam repellat voluptas aspernatur nihil. Corporis odit quisquam fugiat, laudantium nemo quo, obcaecati ab placeat dolorum magnam minus ratione? Ratione quibusdam sapiente repellendus dolorem, harum voluptatum aut unde earum sequi non quis omnis magnam eligendi dolores consequuntur odit voluptatibus ex cumque eos aliquam corrupti beatae alias obcaecati. Adipisci, dolor magnam voluptas nisi quos repellendus repellat eius commodi autem officia, harum, inventore dolores id saepe temporibus explicabo. Libero, nemo. Distinctio, maxime ea!
+                        <h1>Leyenda</h><br><br>
+                        <!--PRUEBA LEYENDA-->
+                        <div id="ANP-ley">
+                            <h2>Áreas Naturales Protegidas</h2>
+                            <img src="http://3.135.88.57:8080/geoserver/cite/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=cite:Áreas%20Naturales%20Protegidas">
+                        </div>
+                        <div id="Rios-ley">
+                            <h2>Ríos</h2>
+                            <img src="http://3.135.88.57:8080/geoserver/cite/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=cite:Ríos de México">
+                        </div>
+                        <div id="LocUrb-ley">
+                            <h2>Localidades urbanas</h2>
+                            <img src="http://3.135.88.57:8080/geoserver/cite/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=cite:Localidades urbanas">
+                        </div>
+                        <!--TERMINA PRUEBA LEYENDA-->
                     </div>
-                    <!--PRUEBA LEYENDA-->
-                    <div id="ANP" style="margin: 10px; font-family: helvetica; display: none;">
-                        <h1>Áreas Naturales Protegidas</h1>
-                        <h2>Capa base</h2>
-                        <img src="http://3.135.88.57:8080/geoserver/cite/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=cite:Áreas%20Naturales%20Protegidas">
-                    </div>
-                    <!--TERMINA PRUEBA LEYENDA-->
-
                 </div>
 
                 <div class="tab-pane fade" id="pills-profile2" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">

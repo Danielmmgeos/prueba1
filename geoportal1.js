@@ -42,28 +42,74 @@ document.addEventListener('DOMContentLoaded', function() {
         transparent: true,
         attribution: 'Datos &copy; Geoserver'
         })
+    var Rios_capa = L.tileLayer.wms('http://3.135.88.57:8080/geoserver/cite/wms', {
+        layers: 'cite:Ríos de México',
+        format: 'image/png',
+        transparent: true,
+        attribution: 'Datos &copy; Geoserver'
+        })
+    var LocUrb_capa = L.tileLayer.wms('http://3.135.88.57:8080/geoserver/cite/wms', {
+        layers: 'cite:Localidades urbanas',
+        format: 'image/png',
+        transparent: true,
+        attribution: 'Datos &copy; Geoserver'
+        })
 
     // Escuchar cambios en el checkbox
-        // Escuchar cambios en el checkbox
-        var ANP_Checkbox = document.getElementById('ANP-checkbox');
-        ANP_Checkbox.addEventListener('change', function() {
-            if (this.checked) {
-                map.addLayer(ANP_capa);
-                document.getElementById('ANP').style.display = 'block';  // Mostrar leyenda
-            } else {
-                map.removeLayer(ANP_capa);
-                document.getElementById('ANP').style.display = 'none';  // Ocultar leyenda
-            }
-        });
-
-
-        // Inicializar la visibilidad basada en el estado del checkbox
-        if (ANP_Checkbox.checked) {
+    var ANP_Checkbox = document.getElementById('ANP-checkbox');
+    ANP_Checkbox.addEventListener('change', function() {
+        if (this.checked) {
             map.addLayer(ANP_capa);
-            document.getElementById('ANP').style.display = 'block';
+            document.getElementById('ANP-ley').style.display = 'block';  
         } else {
-            document.getElementById('ANP').style.display = 'none';
+            map.removeLayer(ANP_capa);
+            document.getElementById('ANP-ley').style.display = 'none';  
         }
+    });
+
+    var Rios_Checkbox = document.getElementById('Rios-checkbox');
+    Rios_Checkbox.addEventListener('change', function() {
+        if (this.checked) {
+            map.addLayer(Rios_capa);
+            document.getElementById('Rios-ley').style.display = 'block';  
+        } else {
+            map.removeLayer(Rios_capa);
+            document.getElementById('Rios-ley').style.display = 'none';  
+        }
+    });
+
+    var LocUrb_Checkbox = document.getElementById('LocUrb-checkbox');
+    LocUrb_Checkbox.addEventListener('change', function() {
+        if (this.checked) {
+            map.addLayer(LocUrb_capa);
+            document.getElementById('LocUrb-ley').style.display = 'block';  
+        } else {
+            map.removeLayer(LocUrb_capa);
+            document.getElementById('LocUrb-ley').style.display = 'none'; 
+        }
+    });
+
+    // Checkbox que activa capas
+    if (ANP_Checkbox.checked) {
+        map.addLayer(ANP_capa);
+        document.getElementById('ANP-ley').style.display = 'block';
+    } else {
+        document.getElementById('ANP-ley').style.display = 'none';
+    }
+
+    if (Rios_Checkbox.checked) {
+        map.addLayer(Rios_capa);
+        document.getElementById('Rios-ley').style.display = 'block';
+    } else {
+        document.getElementById('Rios-ley').style.display = 'none';
+    }
+
+    if (LocUrb_Checkbox.checked) {
+        map.addLayer(LocUrb_capa);
+        document.getElementById('LocUrb-ley').style.display = 'block';
+    } else {
+        document.getElementById('LocUrb-ley').style.display = 'none';
+    }
 
 
     // FINAL PRUEBA CAPAS GEOSERVER
