@@ -204,13 +204,34 @@ footer{
     background-color: rgb(230, 159, 67);
     text-align: center;
     font-size: 10px;
-    margin: 0;
     color: beige;
 }
 footer .contenedor  {
     display: grid;
-    grid-template-columns: 30% 30% 30%;
-    padding: 10px 20px;
+    grid-template-columns: 30% 40% 30%;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#foot2_img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+  text-align: center;
+}
+#foot2_img .redes{
+    margin: 0 10px;
+    padding: 7px;
+    border-radius: 20%;
+    background-color: #fefefeb8;
+}
+
+#foot3{
+    text-align: right;
+    margin-right: 0px;
+    line-height: 13px;
 }
 
 select.form-select {
