@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var map = L.map('map').setView([23.6345, -102.5528], 5);
+    var map = L.map('map').setView([22.332720, -100.256121], 8); 
 
     var osmLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -36,34 +36,34 @@ document.addEventListener('DOMContentLoaded', function() {
     //PRUEBA CAPAS GEOSERVER
         
     // Agregar capa WMS de Geoserver
-    var ANP_capa = L.tileLayer.wms('http://3.135.88.57:8080/geoserver/cite/wms', {
-        layers: 'cite:Áreas Naturales Protegidas',
+    var Escuelas_capa = L.tileLayer.wms('http://3.135.88.57:8080/geoserver/cite/wms', {
+        layers: 'cite:escuelas_slp',
         format: 'image/png',
         transparent: true,
         attribution: 'Datos &copy; Geoserver'
         })
     var Rios_capa = L.tileLayer.wms('http://3.135.88.57:8080/geoserver/cite/wms', {
-        layers: 'cite:Ríos de México',
+        layers: 'cite:rios_slp',
         format: 'image/png',
         transparent: true,
         attribution: 'Datos &copy; Geoserver'
         })
-    var LocUrb_capa = L.tileLayer.wms('http://3.135.88.57:8080/geoserver/cite/wms', {
-        layers: 'cite:Localidades urbanas',
+    var Poblacion_capa = L.tileLayer.wms('http://3.135.88.57:8080/geoserver/cite/wms', {
+        layers: 'cite:censo_slp',
         format: 'image/png',
         transparent: true,
         attribution: 'Datos &copy; Geoserver'
         })
 
     // Escuchar cambios en el checkbox
-    var ANP_Checkbox = document.getElementById('ANP-checkbox');
-    ANP_Checkbox.addEventListener('change', function() {
+    var Escuelas_Checkbox = document.getElementById('Escuelas-checkbox');
+    Escuelas_Checkbox.addEventListener('change', function() {
         if (this.checked) {
-            map.addLayer(ANP_capa);
-            document.getElementById('ANP-ley').style.display = 'block';  
+            map.addLayer(Escuelas_capa);
+            document.getElementById('Escuelas-ley').style.display = 'block';  
         } else {
-            map.removeLayer(ANP_capa);
-            document.getElementById('ANP-ley').style.display = 'none';  
+            map.removeLayer(Escuelas_capa);
+            document.getElementById('Escuelas-ley').style.display = 'none';  
         }
     });
 
@@ -78,23 +78,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    var LocUrb_Checkbox = document.getElementById('LocUrb-checkbox');
-    LocUrb_Checkbox.addEventListener('change', function() {
+    var Poblacion_Checkbox = document.getElementById('Poblacion-checkbox');
+    Poblacion_Checkbox.addEventListener('change', function() {
         if (this.checked) {
-            map.addLayer(LocUrb_capa);
-            document.getElementById('LocUrb-ley').style.display = 'block';  
+            map.addLayer(Poblacion_capa);
+            document.getElementById('Poblacion-ley').style.display = 'block';  
         } else {
-            map.removeLayer(LocUrb_capa);
-            document.getElementById('LocUrb-ley').style.display = 'none'; 
+            map.removeLayer(Poblacion_capa);
+            document.getElementById('Poblacion-ley').style.display = 'none'; 
         }
     });
 
     // Checkbox que activa capas
-    if (ANP_Checkbox.checked) {
-        map.addLayer(ANP_capa);
-        document.getElementById('ANP-ley').style.display = 'block';
+    if (Escuelas_Checkbox.checked) {
+        map.addLayer(Escuelas_capa);
+        document.getElementById('Escuelas-ley').style.display = 'block';
     } else {
-        document.getElementById('ANP-ley').style.display = 'none';
+        document.getElementById('Escuelas-ley').style.display = 'none';
     }
 
     if (Rios_Checkbox.checked) {
@@ -104,11 +104,11 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('Rios-ley').style.display = 'none';
     }
 
-    if (LocUrb_Checkbox.checked) {
-        map.addLayer(LocUrb_capa);
-        document.getElementById('LocUrb-ley').style.display = 'block';
+    if (Poblacion_Checkbox.checked) {
+        map.addLayer(Poblacion_capa);
+        document.getElementById('Poblacion-ley').style.display = 'block';
     } else {
-        document.getElementById('LocUrb-ley').style.display = 'none';
+        document.getElementById('Poblacion-ley').style.display = 'none';
     }
 
 

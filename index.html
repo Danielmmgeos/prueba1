@@ -76,12 +76,12 @@
             <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
                     <div id="capas">
-                        <div1><input type="checkbox" id="ANP-checkbox" name='ANP_' onclick="Fun_ANP()" style="margin: 10px;">
-                            Áreas Naturales Protegidas</div1>
-                        <div1><input type="checkbox" id="Rios-checkbox" name='Rios_' onclick="Fun_RIOS()" style="margin: 10px;">
+                        <div1><input type="checkbox" id="Escuelas-checkbox" name='Escuelas_' onclick="Fun_Escuelas()" style="margin: 10px;">
+                            Escuelas</div1>
+                        <div1><input type="checkbox" id="Rios-checkbox" name='Rios_' onclick="Fun_Rios()" style="margin: 10px;">
                             Ríos</div1>
-                        <div1><input type="checkbox" id="LocUrb-checkbox" name='CH_10_PB_PTM' style="margin: 10px"
-                            onclick="Fun_LocUrb()">Localidades</div1>
+                        <div1><input type="checkbox" id="Poblacion-checkbox" name='Poblacion_' onclick="Fun_Poblacion()" style="margin: 10px">
+                            Población total</div1>
                     </div>
                 </div>
 
@@ -89,17 +89,17 @@
                     <div id="Leyenda">
                         <h1>Leyenda</h><br><br>
                         <!--PRUEBA LEYENDA-->
-                        <div id="ANP-ley">
-                            <h2>Áreas Naturales Protegidas</h2>
-                            <img src="http://3.135.88.57:8080/geoserver/cite/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=cite:Áreas%20Naturales%20Protegidas">
+                        <div id="Escuelas-ley">
+                            <h2>Escuelas</h2>
+                            <img src="http://3.135.88.57:8080/geoserver/cite/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=cite:escuelas_slp">
                         </div>
                         <div id="Rios-ley">
                             <h2>Ríos</h2>
-                            <img src="http://3.135.88.57:8080/geoserver/cite/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=cite:Ríos de México">
+                            <img src="http://3.135.88.57:8080/geoserver/cite/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=cite:rios_slp">
                         </div>
-                        <div id="LocUrb-ley">
-                            <h2>Localidades urbanas</h2>
-                            <img src="http://3.135.88.57:8080/geoserver/cite/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=cite:Localidades urbanas">
+                        <div id="Poblacion-ley">
+                            <h2>Población total</h2>
+                            <img src="http://3.135.88.57:8080/geoserver/cite/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=cite:censo_slp">
                         </div>
                         <!--TERMINA PRUEBA LEYENDA-->
                     </div>
