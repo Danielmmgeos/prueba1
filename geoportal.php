@@ -11,24 +11,22 @@ if (!$connection) {
     die("No se ha podido establecer conexión con la base de datos.");
 }
 
-// Obtener el tipo del formulario (POST)
+// Obtener el tipo y el ámbito del formulario (POST)
 $tipo = isset($_POST['tipo']) ? $_POST['tipo'] : '';
-$region = isset($_GET['region']) ? $_GET['region'] : '';
+$ambito = isset($_POST['ambito']) ? $_POST['ambito'] : '';
 
 // Comenzar la consulta SQL
-$query = "SELECT nombre, cat_manejo, estados, region, superficie, s_terres, s_marina, prim_dec, ST_AsGeoJson(geom,5) as coords FROM anp";
+$query = "SELECT cvegeo, cve_ent, cve_mun, cve_loc, cve_ageb, cve_mza, condicion, geografico, nomserv, tipo, cve_serv, ambito, ST_AsGeoJson(geometry,5) as coords FROM escuelas";
 
-// Agregar filtros según el tipo y la región
+// Agregar filtros según el tipo y el ámbito
 $conditions = [];
 
 if (!empty($tipo) && $tipo !== "nodata") {
-    if ($tipo !== "TOT") {
-        $conditions[] = "cat_manejo = '$tipo'";
-    }
+    $conditions[] = "tipo = '$tipo'";
 }
 
-if (!empty($region)) {
-    $conditions[] = "(region ILIKE '%$region%' OR estados ILIKE '%$region%')";
+if (!empty($ambito)) {
+    $conditions[] = "ambito = '$ambito'";
 }
 
 // Agrega las condiciones a la consulta
@@ -36,7 +34,7 @@ if (!empty($conditions)) {
     $query .= " WHERE " . implode(' AND ', $conditions);
 }
 
-$query .= " ORDER BY nombre";
+$query .= " ORDER BY cvegeo";
 
 // Ejecutar la consulta SQL
 $result = pg_query($connection, $query);
